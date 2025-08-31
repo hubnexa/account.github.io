@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta - NexaHub</title>
+
+    <!-- Meta info -->
+    <meta name="description" content="Inicia sesión o crea tu cuenta en NexaHub para acceder a tus perfiles y progreso en juegos.">
+    <meta name="keywords" content="NexaHub, cuenta, login, usuario, perfiles, juegos">
+    <meta name="author" content="NexaHub Studio">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://nexabot.shop/img/logo.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/account.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="logo">
+            <img src="../img/logo.png" alt="NexaHub Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="../">Inicio</a>
+        </nav>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- Mobile menu -->
+    <nav class="mobile-menu" id="mobile-menu">
+        <a href="../">Inicio</a>
+    </nav>
+
+    <!-- Hero / Introducción -->
+    <section class="hero-account">
+        <div class="hero-content">
+            <h1>Bienvenido a NexaHub Account</h1>
+            <p>Accede a tus perfiles, progreso y logros en todos nuestros juegos. Inicia sesión o crea una cuenta nueva para empezar.</p>
+            <div class="hero-buttons">
+                <a href="login.html" class="btn">Iniciar Sesión</a>
+                <a href="sign-in.html" class="btn">Crear Cuenta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (idéntico al de la otra web) -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Soporte</h4>
+                <ul>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <ul>
+                    <li><a href="#">X (Twitter)</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Discord</a></li>
+                </ul>
+            </div>
+            <div class="footer-section copyright">
+                <p>&copy; 2025 NexaHub. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
