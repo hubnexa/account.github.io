@@ -35,19 +35,14 @@
         </div>
     </header>
 
-    <!-- Contenido principal -->
-    <main class="container">
-        <section class="account-box">
-            <h2>Detalles de la cuenta</h2>
-            <p><strong>Usuario:</strong> <span id="displayUsername"></span></p>
-            <p><strong>Correo:</strong> <span id="displayEmail"></span></p>
-            <p><strong>UID:</strong> <span id="displayUID"></span></p>
-        </section>
-        <section id="errorBox" class="error-box hidden">
-            <h2>Error</h2>
-            <p>No hay ninguna sesión activa. Por favor, <a href="../login">inicia sesión</a>.</p>
-        </section>
-    </main>
+   <h1 id="welcome-message">Bienvenido, Usuario!</h1>
+
+<div class="redeem-box">
+    <h2>Canjear Código de Regalo</h2>
+    <input type="text" id="gift-code" placeholder="Ingresa tu código">
+    <button id="redeem-btn">Canjear</button>
+    <p id="redeem-result"></p>
+</div>
 
     <footer>
         <p>&copy; 2025 - Todos los derechos reservados</p>
