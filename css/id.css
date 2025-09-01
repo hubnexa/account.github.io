@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.user-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.username {
+    font-weight: bold;
+    color: #fff;
+}
+
+.dropdown {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background: #1e293b;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown button {
+    background: none;
+    border: none;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.dropdown button:hover {
+    background: #334155;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Contenido principal */
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.account-box {
+    background: rgba(30, 41, 59, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+}
+
+.account-box h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.account-box p {
+    margin: 10px 0;
+    color: #cbd5e1;
+}
+
+.error-box {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #111827;
+}

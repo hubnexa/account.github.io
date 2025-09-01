@@ -69,12 +69,12 @@
 
             try {
                 await auth.signInWithEmailAndPassword(email, password);
-                status.textContent = "Inicio de sesión exitoso ✅";
+                status.textContent = "Inicio de sesión exitoso.";
                 status.style.color = "limegreen";
 
                 // Redirigir a página de cuenta
                 setTimeout(() => {
-                    window.location.href = "https://account.nexaweb.shop/ID";
+                    window.location.href = "../ID";
                 }, 800);
             } catch (error) {
                 console.error(error);

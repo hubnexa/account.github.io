@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta - Nexa</title>
+    <link rel="stylesheet" href="../css/id.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="logo">
+            <img src="https://nexaweb.shop/img/logo.png" alt="Nexa Logo">
+            <span>Nexa</span>
+        </div>
+        <div class="user-menu">
+            <span id="userName" class="username">Cargando...</span>
+            <div id="dropdown" class="dropdown hidden">
+                <button id="logoutBtn">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <section class="account-box">
+            <h2>Detalles de la cuenta</h2>
+            <p><strong>Usuario:</strong> <span id="displayUsername"></span></p>
+            <p><strong>Correo:</strong> <span id="displayEmail"></span></p>
+            <p><strong>UID:</strong> <span id="displayUID"></span></p>
+        </section>
+        <section id="errorBox" class="error-box hidden">
+            <h2>Error</h2>
+            <p>No hay ninguna sesión activa. Por favor, <a href="../login">inicia sesión</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Firebase SDK (Compat para la API usada) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+    <script src="../js/id.js"></script>
+</body>
+</html>
