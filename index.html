@@ -3,82 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accounts - Nexa</title>
+    <title>Account - Nexa</title>
 
-    <!-- Meta info -->
-    <meta name="description" content="Inicia sesión o crea tu cuenta en NexaHub para acceder a tus perfiles y progreso en juegos.">
-    <meta name="keywords" content="NexaHub, cuenta, login, usuario, perfiles, juegos">
-    <meta name="author" content="NexaHub Studio">
+    <meta name="description" content="Gestiona tu cuenta en Nexa: crea un perfil, inicia sesión y accede a beneficios exclusivos.">
+    <meta name="keywords" content="Nexa, cuenta, login, registro, jugadores, perfiles">
+    <meta name="author" content="Nexa">
 
-    <!-- Favicon -->
+    <meta property="og:title" content="Account - Nexa">
+    <meta property="og:description" content="Crea tu cuenta en Nexa y accede a perfiles personalizados, logros y recompensas.">
+    <meta property="og:image" content="https://nexaweb.shop/img/logo.png">
+    <meta property="og:url" content="https://account.nexaweb.shop">
+    <meta property="og:type" content="website">
+
     <link rel="icon" href="https://nexaweb.shop/img/logo.png" type="image/x-icon">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="css/account.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <!-- Topbar -->
     <header class="topbar">
         <div class="logo">
             <img src="https://nexaweb.shop/img/logo.png" alt="NexaHub Logo">
+            <span>Nexa</span>
         </div>
-        <nav class="nav-links">
-            <a href="https://nexaweb.shop/">Inicio</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="https://nexaweb.shop">Inicio</a></li>
+            </ul>
         </nav>
-        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
-    <!-- Mobile menu -->
-    <nav class="mobile-menu" id="mobile-menu">
-        <a href="../">Inicio</a>
-    </nav>
+    <!-- Menú responsive -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="https://nexawev.shop">Inicio</a></li>
+        </ul>
+    </div>
 
-    <!-- Hero / Introducción -->
-    <section class="hero-account">
-        <div class="hero-content">
-            <h1>Bienvenido a Nexa Account</h1>
-            <p>Accede a tus perfiles, progreso y logros en todos nuestros juegos. Inicia sesión o crea una cuenta nueva para empezar.</p>
-            <div class="hero-buttons">
-                <a href="login.html" class="btn">Iniciar Sesión</a>
-                <a href="sign-in.html" class="btn">Crear Cuenta</a>
+    <!-- Introducción -->
+    <section class="intro">
+        <div class="intro-content">
+            <h1>Bienvenido a tu cuenta NexaHub</h1>
+            <p>Gestiona tu perfil, personaliza tu experiencia y accede a beneficios exclusivos como logros, recompensas y estadísticas detalladas de tus juegos.</p>
+            <ul class="benefits">
+                <li>✔ Crea tu perfil único</li>
+                <li>✔ Accede a tu progreso en cualquier dispositivo</li>
+                <li>✔ Desbloquea logros y recompensas</li>
+                <li>✔ Conéctate con otros jugadores</li>
+            </ul>
+            <div class="buttons">
+                <a href="sign-in" class="btn-primary">Crear cuenta</a>
+                <a href="login" class="btn-secondary">Iniciar sesión</a>
             </div>
+        </div>
+        <div class="intro-image">
+            <img src="https://nexaweb.shop/img/account.png" alt="Cuenta NexaHub">
         </div>
     </section>
 
-    <!-- Footer (idéntico al de la otra web) -->
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>Soporte</h4>
-                <ul>
-                    <li><a href="#">Ayuda</a></li>
-                    <li><a href="#">Términos</a></li>
-                    <li><a href="#">Privacidad</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Redes Sociales</h4>
-                <ul>
-                    <li><a href="#">X (Twitter)</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Discord</a></li>
-                </ul>
-            </div>
-            <div class="footer-section copyright">
-                <p>&copy; 2025 Nexa. Todos los derechos reservados.</p>
-            </div>
+        <div class="footer-content">
+            <p>&copy; 2025 NexaHub Studio. Todos los derechos reservados.</p>
+            <p><a href="https://nexaweb.shop/Privacy-Policies">Política de Privacidad</a> | <a href="https://nexaweb.shop/Terms-of-Service">Términos y Condiciones</a></p>
         </div>
     </footer>
 
-    <!-- JS -->
     <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            menu.classList.toggle('active');
         });
     </script>
 </body>

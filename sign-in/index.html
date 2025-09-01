@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Nexa</title>
+    <link rel="stylesheet" href="../css/sign-in.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+        <section class="form-box">
+            <h2>Crear cuenta</h2>
+            <p>Regístrate para acceder a tu cuenta Nexa</p>
+            <form id="signUpForm">
+                <div class="input-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" placeholder="Ej: NexaPlayer" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Correo</label>
+                    <input type="email" id="email" placeholder="ejemplo@email.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="********" required>
+                </div>
+                <button type="submit" class="btn-primary">Crear cuenta</button>
+                <p class="redirect">¿Ya tienes cuenta? <a href="../login">Inicia sesión</a></p>
+            </form>
+            <p id="status"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Firebase SDK (usar versiones COMPAT porque el código usa la API v8) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+
+    <script>
+       const firebaseConfig = {
+         apiKey: "AIzaSyAdQ6nI-bspXeVQ4S1-vQjyDOrqr55tGpA",
+         authDomain: "nexahub-aa4e7.firebaseapp.com",
+         projectId: "nexahub-aa4e7",
+         storageBucket: "nexahub-aa4e7.firebasestorage.app",
+         messagingSenderId: "564437910728",
+         appId: "1:564437910728:web:a2fb26d5c2bfdb64e751fd",
+         measurementId: "G-0JSNRY02QE"
+       };
+
+        // Inicializar Firebase (API compat/v8)
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // Persistencia local para mantener sesión al volver
+        (async () => {
+          try {
+            await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+          } catch (e) {
+            console.error('Persistencia falló:', e);
+          }
+        })();
+
+        // Capturar formulario
+        document.getElementById('signUpForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const status = document.getElementById('status');
+
+            try {
+                const cred = await auth.createUserWithEmailAndPassword(email, password);
+                const user = cred.user;
+
+                // Guardar datos en Firestore bajo /users/{uid}
+                await db.collection('users').doc(user.uid).set({
+                    username,
+                    email,
+                    password,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    ua: navigator.userAgent  // opcional: para “reconocer” el navegador
+                });
+
+                status.textContent = "Cuenta creada con éxito.";
+                status.style.color = "limegreen";
+
+                // Redirige a tu página de perfil
+                setTimeout(() => {
+                    window.location.href = "https://account.nexaweb.shop/ID";
+                }, 800);
+            } catch (error) {
+                console.error(error);
+                status.textContent = "Error: " + (error && error.message ? error.message : 'desconocido');
+                status.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
